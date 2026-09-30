@@ -1,0 +1,215 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+.post .post-header {
+  margin-bottom: 2rem;
+}
+.post-description {
+  line-height: 1.7;
+}
+.post .home-section {
+  margin-top: 3rem;
+  scroll-margin-top: 20px;
+}
+.home-section > h2 {
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+.profile-links {
+  display: flex;
+  gap: 1.4rem;
+  margin: 1.5rem 0 2.3rem;
+  font-size: 0.95rem;
+}
+.working-paper {
+  margin: 0 0 1.8rem;
+}
+.working-paper h3,
+.experience-item h3 {
+  font-size: 1.06rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0 0 0.4rem;
+}
+.working-paper p {
+  margin: 0.5rem 0;
+}
+.paper-status {
+  font-size: 0.85rem;
+  color: var(--global-text-color-light);
+}
+.project-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.project-demo {
+  margin: 1.5rem 0 0;
+}
+.project-demo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0 0 4px 4px;
+}
+.demo-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem 0.8rem;
+  background: var(--global-code-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 4px 4px 0 0;
+  font-size: 0.8rem;
+}
+.demo-toggle {
+  font: inherit;
+  color: var(--global-theme-color);
+  border: 1px solid var(--global-theme-color);
+  background: transparent;
+  border-radius: 3px;
+  padding: 0.3rem 0.65rem;
+  cursor: pointer;
+}
+figcaption {
+  font-size: 0.8rem;
+  color: var(--global-text-color-light);
+  line-height: 1.6;
+  margin-top: 0.55rem;
+}
+.experience-item {
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr);
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+.experience-date {
+  font-size: 0.85rem;
+  color: var(--global-text-color-light);
+  padding-top: 0.25rem;
+}
+.experience-item p {
+  margin: 0.4rem 0 0;
+}
+.home-section p {
+  line-height: 1.7;
+}
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--global-theme-color);
+  outline-offset: 4px;
+}
+@media (max-width: 600px) {
+  .experience-item {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+  .post .home-section {
+    margin-top: 2.4rem;
+  }
+  .profile-links {
+    gap: 1.3rem;
+  }
+  .demo-toolbar {
+    gap: 0.5rem;
+  }
+  .working-paper h3 {
+    font-size: 1.05rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Personal profile and recruiting information. */
+.post-title .nickname {
+  font-size: 0.62em;
+  font-weight: 300;
+  white-space: nowrap;
+  color: var(--global-text-color-light);
+}
+.profile {
+  width: 27%;
+  max-width: 220px;
+  margin: 0 0 1.5rem 2rem;
+}
+.profile figure {
+  overflow: hidden;
+  border-radius: 4px;
+}
+.profile img {
+  transform: scale(1.35);
+  transform-origin: 50% 63%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  width: 100%;
+}
+.availability {
+  margin: 1.6rem 0 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--global-theme-color);
+  line-height: 1.7;
+  clear: both;
+}
+.publications .publication-summary {
+  margin: 0.8rem 0 0.9rem;
+  font-style: normal;
+  line-height: 1.65;
+}
+.education-item {
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr);
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+.education-item h3 {
+  font-size: 1.06rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0 0 0.4rem;
+}
+.education-item p {
+  margin: 0.4rem 0 0;
+}
+.degree-note {
+  color: var(--global-text-color-light);
+  font-size: 0.9rem;
+}
+@media (max-width: 600px) {
+  .profile {
+    float: none !important;
+    width: 165px;
+    margin: 0 0 1.7rem;
+  }
+  .education-item {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+}
+
+.teaching-role {
+  font-weight: 500;
+  margin: 0 0 0.8rem;
+}
+.teaching-courses {
+  padding-left: 1.2rem;
+  margin: 0;
+}
+.teaching-courses li {
+  padding-left: 0.3rem;
+  margin: 0.6rem 0;
+  line-height: 1.65;
+}
+.course-code {
+  color: var(--global-text-color-light);
+  font-size: 0.9rem;
+}
