@@ -73,6 +73,7 @@
 
 
 <meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
 
 <!-- Security: Content Security Policy -->
 <!-- Permissive CSP suitable for academic websites. Allows external images, videos, and common embed services. -->
@@ -134,9 +135,17 @@
   <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark">
   <script>
     try {
-      if (!localStorage.getItem('theme')) localStorage.setItem('theme', 'dark');
-    } catch (_) {}
-    initTheme();
+      const defaultsKey = 'shuo-han-theme-default';
+      const savedTheme = localStorage.getItem('theme');
+      if (localStorage.getItem(defaultsKey) !== 'light-v1' || !['light', 'dark', 'system'].includes(savedTheme)) {
+        localStorage.setItem('theme', 'light');
+        localStorage.setItem(defaultsKey, 'light-v1');
+      }
+      initTheme();
+    } catch (_) {
+      document.documentElement.setAttribute('data-theme', 'light');
+      document.documentElement.setAttribute('data-theme-setting', 'light');
+    }
   </script>
 
 
