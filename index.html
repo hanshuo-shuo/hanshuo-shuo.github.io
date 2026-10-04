@@ -126,7 +126,7 @@
 
 <link rel="stylesheet" href="/assets/css/main.css?v=3116ba77db9ee1581d05bb3e86fbf7f1">
 
-<link rel="stylesheet" href="/assets/css/personal.css?v=04717c3bff067e02c74b6c9d06af44bb">
+<link rel="stylesheet" href="/assets/css/personal.css?v=156cd66ce6beb19adde7826e3e728a5d">
 <link rel="canonical" href="https://hanshuo-shuo.github.io/">
 
 
@@ -260,13 +260,43 @@
       
         <div class="post">
   <header class="post-header">
-    <h1 class="post-title">
-      
-        <span class="font-weight-bold">Shuo</span> 
-        Han
-      
-      <span class="nickname">(Tansio)</span>
-    </h1>
+    <div class="post-heading-row">
+      <h1 class="post-title">
+        
+          <span class="font-weight-bold">Shuo</span> 
+          Han
+        
+        <span class="nickname">(Tansio)</span>
+      </h1>
+      <button class="learning-trajectory" type="button" aria-label="Replay the learning trajectory">
+        <svg viewbox="0 0 152 82" width="152" height="82" aria-hidden="true" focusable="false">
+          <g class="trajectory-grid">
+            <circle cx="16" cy="20" r="1"></circle>
+            <circle cx="40" cy="20" r="1"></circle>
+            <circle cx="64" cy="20" r="1"></circle>
+            <circle cx="88" cy="20" r="1"></circle>
+            <circle cx="112" cy="20" r="1"></circle>
+            <circle cx="136" cy="20" r="1"></circle>
+            <circle cx="16" cy="42" r="1"></circle>
+            <circle cx="40" cy="42" r="1"></circle>
+            <circle cx="64" cy="42" r="1"></circle>
+            <circle cx="88" cy="42" r="1"></circle>
+            <circle cx="112" cy="42" r="1"></circle>
+            <circle cx="136" cy="42" r="1"></circle>
+            <circle cx="16" cy="64" r="1"></circle>
+            <circle cx="40" cy="64" r="1"></circle>
+            <circle cx="64" cy="64" r="1"></circle>
+            <circle cx="88" cy="64" r="1"></circle>
+            <circle cx="112" cy="64" r="1"></circle>
+            <circle cx="136" cy="64" r="1"></circle>
+          </g>
+          <path class="trajectory-base" d="M16 64 C32 64 26 42 44 42 S54 62 70 56 S72 20 94 20 S113 42 136 20"></path>
+          <path class="trajectory-trace" d="M16 64 C32 64 26 42 44 42 S54 62 70 56 S72 20 94 20 S113 42 136 20" pathlength="1"></path>
+          <circle class="trajectory-agent" cx="16" cy="64" r="3.5"></circle>
+          <circle class="trajectory-goal" cx="136" cy="20" r="3"></circle>
+        </svg>
+      </button>
+    </div>
     <p class="desc">Ph.D. Candidate · Statistics &amp; Data Science, Northwestern University</p>
   </header>
 
@@ -314,8 +344,8 @@
 
 <div class="profile-links">
 <a href="mailto:TansioHan@u.northwestern.edu">Email</a>
-<a href="https://github.com/hanshuo-shuo" target="_blank" rel="noopener">GitHub</a>
-<a href="https://www.linkedin.com/in/tansiohan/" target="_blank" rel="noopener">LinkedIn</a>
+<a href="https://github.com/hanshuo-shuo" target="_blank" rel="noopener">GitHub <span class="external-link-arrow" aria-hidden="true">↗</span></a>
+<a href="https://www.linkedin.com/in/tansiohan/" target="_blank" rel="noopener">LinkedIn <span class="external-link-arrow" aria-hidden="true">↗</span></a>
 </div>
 
 <section id="publications" class="home-section" aria-labelledby="publications-title">
@@ -367,13 +397,39 @@
     
     
     
+      
+
+  <details class="publication-figure">
+    <summary aria-label="Preview Concept · Uncertainty-aware decisions" aria-controls="figure-han2025mice">Figure</summary>
+    <figure class="publication-figure-panel" id="figure-han2025mice" aria-label="Concept · Uncertainty-aware decisions">
+      <div class="publication-figure-heading">
+        <span>Concept · Uncertainty-aware decisions</span>
+        <button class="publication-figure-close" type="button" aria-label="Close figure preview" hidden="">×</button>
+      </div>
+      <a class="publication-figure-image" href="/assets/img/publication_previews/mouse-uncertainty-concept.png" target="_blank" rel="noopener" aria-label="Open full-size Concept · Uncertainty-aware decisions">
+        <img src="/assets/img/publication_previews/mouse-uncertainty-concept.png" width="1536" height="1024" alt="Three illustrated stages show a mouse observing a partly hidden robot, updating a belief distribution with new evidence, and choosing to pause or move; a feedback arrow returns to observation." loading="lazy" decoding="async">
+      </a>
+      <figcaption>
+        An illustrative loop in which new observations revise beliefs about possible outcomes, informing whether to pause or move.
+        <span class="publication-figure-credit">Conceptual illustration · not measured cognitive activity</span>
+      </figcaption>
+      <div class="publication-figure-links">
+        <a href="/assets/img/publication_previews/mouse-uncertainty-concept.png" target="_blank" rel="noopener">Full-size figure <span aria-hidden="true">↗</span></a>
+        <a href="https://arxiv.org/abs/2505.12204" target="_blank" rel="noopener">Related paper
+          <span aria-hidden="true">↗</span></a>
+      </div>
+    </figure>
+  </details>
+
+
+    
     
     
     <div class="periodical">
       <em>In International Conference on Machine Learning</em>,  2025
     </div>
     <div class="periodical">
-      First author.<p class="publication-summary">Combines behavioral <strong>data analysis</strong> and <strong>PyTorch modeling</strong> to compare learning in mice and artificial agents. Analyzes trajectories and risk-taking behavior, develops <strong>reinforcement learning (RL)</strong> models, and evaluates a <strong>VLM/LLM (GPT-4o)</strong> agent in the same task.</p>
+      First author.<p class="publication-summary">Combines behavioral <strong>data analysis</strong> and <strong>PyTorch modeling</strong> to compare learning in mice and artificial agents. Uses trajectory analysis and <strong>uncertainty quantification</strong> to guide <strong>reinforcement learning (RL)</strong>, using variance across action values as an uncertainty signal that encourages cautious decisions. Also evaluates a <strong>VLM/LLM (GPT-4o)</strong> agent in the same task.</p>
     </div>
 
     <!-- Links/Buttons -->
@@ -420,7 +476,7 @@
     
       <!-- Hidden abstract block -->
       <div class="abstract hidden">
-        <p>A behavioral-data study of biological mice, RL agents, and a vision-language LLM agent (GPT-4o) in a shared predator-avoidance environment. Trajectory analysis reveals contrasting risk-taking strategies, motivating two biology-inspired learning mechanisms. A focused VLM/LLM experiment examines how visual observations and task instructions translate into closed-loop decisions.</p>
+        <p>A behavioral-data study of biological mice, RL agents, and a vision-language LLM agent (GPT-4o) in a shared predator-avoidance environment. Trajectory analysis reveals contrasting risk-taking strategies, motivating two biology-inspired learning mechanisms. These include uncertainty quantification using variance across action values to inform a variance-penalized temporal-difference learning objective. A focused VLM/LLM experiment examines how visual observations and task instructions translate into closed-loop decisions.</p>
       </div>
     
 
@@ -472,6 +528,32 @@
     
     
     
+    
+      
+
+  <details class="publication-figure">
+    <summary aria-label="Preview Figure 1 · D2AC overview" aria-controls="figure-zhang2025d2ac">Figure</summary>
+    <figure class="publication-figure-panel" id="figure-zhang2025d2ac" aria-label="Figure 1 · D2AC overview">
+      <div class="publication-figure-heading">
+        <span>Figure 1 · D2AC overview</span>
+        <button class="publication-figure-close" type="button" aria-label="Close figure preview" hidden="">×</button>
+      </div>
+      <a class="publication-figure-image" href="/assets/img/publication_previews/d2ac-overview.png" target="_blank" rel="noopener" aria-label="Open full-size Figure 1 · D2AC overview">
+        <img src="/assets/img/publication_previews/d2ac-overview.png" width="1676" height="624" alt="Diagram connecting the diffusion actor's denoising process with a distributional critic, with Pick and Place and Fetch Slide examples." loading="lazy" decoding="async">
+      </a>
+      <figcaption>
+        A distributional critic guides a diffusion actor through action denoising, illustrated on robotic manipulation tasks.
+        <span class="publication-figure-credit">Zhang, Han et al. · TMLR 2025</span>
+      </figcaption>
+      <div class="publication-figure-links">
+        <a href="/assets/img/publication_previews/d2ac-overview.png" target="_blank" rel="noopener">Full-size figure <span aria-hidden="true">↗</span></a>
+        <a href="https://arxiv.org/pdf/2510.03508v2#page=2" target="_blank" rel="noopener">Original paper
+          <span aria-hidden="true">↗</span></a>
+      </div>
+    </figure>
+  </details>
+
+
     
     
     
@@ -578,6 +660,32 @@
     
     
     
+    
+      
+
+  <details class="publication-figure">
+    <summary aria-label="Preview Figure 3 · Event-study estimates" aria-controls="figure-zhu2021emission">Figure</summary>
+    <figure class="publication-figure-panel" id="figure-zhu2021emission" aria-label="Figure 3 · Event-study estimates">
+      <div class="publication-figure-heading">
+        <span>Figure 3 · Event-study estimates</span>
+        <button class="publication-figure-close" type="button" aria-label="Close figure preview" hidden="">×</button>
+      </div>
+      <a class="publication-figure-image" href="/assets/img/publication_previews/did-event-study.png" target="_blank" rel="noopener" aria-label="Open full-size Figure 3 · Event-study estimates">
+        <img src="/assets/img/publication_previews/did-event-study.png" width="1528" height="635" alt="Two event-study plots show estimates before and after policy adoption for sulfur dioxide and wastewater emissions, with 95% confidence intervals." loading="lazy" decoding="async">
+      </a>
+      <figcaption>
+        Policy effects on industrial sulfur dioxide and wastewater emissions, with 95% confidence intervals adjusted for city-level clustering.
+        <span class="publication-figure-credit">Zhu, Han et al. · IJERPH 2021</span>
+      </figcaption>
+      <div class="publication-figure-links">
+        <a href="/assets/img/publication_previews/did-event-study.png" target="_blank" rel="noopener">Full-size figure <span aria-hidden="true">↗</span></a>
+        <a href="https://www.mdpi.com/1660-4601/18/9/4649" target="_blank" rel="noopener">Original paper
+          <span aria-hidden="true">↗</span></a>
+      </div>
+    </figure>
+  </details>
+
+
     
     
     
