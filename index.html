@@ -126,7 +126,7 @@
 
 <link rel="stylesheet" href="/assets/css/main.css?v=3116ba77db9ee1581d05bb3e86fbf7f1">
 
-<link rel="stylesheet" href="/assets/css/personal.css?v=156cd66ce6beb19adde7826e3e728a5d">
+<link rel="stylesheet" href="/assets/css/personal.css?v=726398d44fb526705adcea1d6efcbabc">
 <link rel="canonical" href="https://hanshuo-shuo.github.io/">
 
 
@@ -775,7 +775,10 @@
 
 <section id="projects" class="home-section" aria-labelledby="project-title">
 <h2 id="project-title">selected project</h2>
+<div class="project-heading">
 <h3 class="project-title"><a href="https://github.com/hanshuo-shuo/MouseMind" target="_blank" rel="noopener">MouseMind <span aria-hidden="true">↗</span></a></h3>
+<a class="try-demo" href="/assets/demos/mousemind/" target="_blank" rel="noopener" aria-haspopup="dialog" aria-controls="mousemind-playground"><span aria-hidden="true">▷</span> Try demo</a>
+</div>
 <p>A hierarchical language-conditioned policy that uses instructions and temporal context to choose strategic skills, with a compact behavior-cloning specialist for low-level motion.</p>
 <figure class="project-demo">
 <div class="demo-toolbar">
@@ -784,6 +787,16 @@
 <img id="mousemind-demo" src="/assets/img/mousemind-first-person-poster.png" data-poster="/assets/img/mousemind-first-person-poster.png" data-animation="/assets/img/mousemind-first-person.gif" width="644" height="240" alt="First-person BotEvade task demonstration with its trajectory shown alongside the agent view." loading="lazy">
 <figcaption>BotEvade environment demonstration with a path-following controller.</figcaption>
 </figure>
+<dialog class="game-dialog" id="mousemind-playground" aria-labelledby="playground-title">
+<div class="game-dialog-header">
+<h2 id="playground-title">MouseMind · Try it yourself</h2>
+<button class="game-dialog-close" type="button" aria-label="Close game">×</button>
+</div>
+<iframe class="game-frame" src="about:blank" title="MouseMind first-person playable demo"></iframe>
+<div class="game-dialog-footer">
+<span>Browser adaptation · <a href="https://github.com/hanshuo-shuo/Mice-first-person" target="_blank" rel="noopener">Source <span aria-hidden="true">↗</span></a> · Esc to close</span><a href="/assets/demos/mousemind/" target="_blank" rel="noopener">Open in a new tab <span aria-hidden="true">↗</span></a>
+</div>
+</dialog>
 </section>
 
 <section id="experience" class="home-section" aria-labelledby="experience-title">

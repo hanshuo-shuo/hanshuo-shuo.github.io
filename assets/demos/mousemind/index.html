@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="referrer" content="no-referrer" />
+    <title>MouseMind · First-person playground</title>
+    <link rel="stylesheet" href="./game.css" />
+    <script type="module" src="./game.mjs"></script>
+  </head>
+  <body>
+    <main class="playground" data-phase="loading">
+      <header class="game-header">
+        <div>
+          <p class="eyebrow">FIRST-PERSON PLAYGROUND</p>
+          <h1>You’re the mouse.</h1>
+        </div>
+        <div class="game-actions">
+          <button id="pause" type="button" disabled>Pause</button>
+          <button id="restart" type="button" disabled>Restart</button>
+          <a id="back" href="../../../#projects" aria-label="Back to the website">Back <span aria-hidden="true">↗</span></a>
+        </div>
+      </header>
+
+      <p class="objective">Reach the <span class="goal-color">green exit</span>. Use the walls to stay out of the robot’s sight.</p>
+      <div class="game-hud">
+        <div class="game-stats">
+          <span>Time <strong id="timer">0:00</strong></span
+          ><span>Captures <strong id="captures">0</strong></span>
+        </div>
+        <label class="map-toggle"><input id="show-map" type="checkbox" /> Show map</label>
+      </div>
+
+      <div
+        class="arena-view"
+        tabindex="0"
+        aria-label="Game controls: arrow keys or W A S D to move and turn; Q E to peek; Space to stop; P to pause."
+      >
+        <div class="eyes">
+          <figure>
+            <figcaption>LEFT EYE</figcaption>
+            <canvas id="left-eye" width="360" height="240" role="img" aria-label="Left-eye view of the maze"></canvas>
+          </figure>
+          <figure>
+            <figcaption>RIGHT EYE</figcaption>
+            <canvas id="right-eye" width="360" height="240" role="img" aria-label="Right-eye view of the maze"></canvas>
+          </figure>
+        </div>
+        <div class="map-panel" hidden>
+          <canvas id="map" width="180" height="180" role="img" aria-label="Maze map showing your position, your path, and the exit"></canvas>
+        </div>
+        <div class="game-overlay" id="overlay">
+          <div class="overlay-card">
+            <h2 id="overlay-title">Loading the maze…</h2>
+            <p id="overlay-description">Preparing your first-person view.</p>
+            <button id="start" class="primary-button" type="button" disabled>Play</button>
+          </div>
+        </div>
+      </div>
+
+      <p class="game-status" id="status" role="status" aria-live="polite">Loading world 21_05.</p>
+      <div class="controls">
+        <div class="control-group">
+          <span class="control-label">Move & turn</span>
+          <div class="button-group">
+            <button type="button" data-control="left" aria-label="Turn left" title="A or left arrow">←</button>
+            <button type="button" data-control="forward" aria-label="Move forward" title="W or up arrow">↑</button>
+            <button type="button" data-control="backward" aria-label="Move backward" title="S or down arrow">↓</button>
+            <button type="button" data-control="right" aria-label="Turn right" title="D or right arrow">→</button>
+          </div>
+        </div>
+        <div class="control-group">
+          <span class="control-label">Peek</span>
+          <div class="button-group">
+            <button type="button" data-control="peek-left" aria-label="Peek left" title="Q">Q <span aria-hidden="true">↶</span></button>
+            <button type="button" data-control="peek-right" aria-label="Peek right" title="E">E <span aria-hidden="true">↷</span></button>
+          </div>
+        </div>
+        <div class="control-group stop-group">
+          <span class="control-label">Stop</span><button type="button" data-control="stop" title="Space">Space</button>
+        </div>
+      </div>
+      <p class="keyboard-hint">
+        <kbd>WASD</kbd> or <kbd>↑ ↓ ← →</kbd> move & turn · <kbd>Q E</kbd> peek · <kbd>P</kbd> pause · drag the view to turn
+      </p>
+      <footer>
+        Browser adaptation of
+        <a href="https://github.com/hanshuo-shuo/Mice-first-person" target="_blank" rel="noopener"
+          >Mice-first-person <span aria-hidden="true">↗</span></a
+        >
+        · Cellworld map 21_05
+      </footer>
+      <noscript><p class="noscript">Enable JavaScript to play this browser demo.</p></noscript>
+    </main>
+  </body>
+</html>
