@@ -1,4 +1,5 @@
 import { castRay, isWalkable } from "./engine.mjs";
+import { objectSprite } from "./sprites.mjs";
 
 const rgb = (channels) => `rgb(${channels.map((c) => Math.round(c)).join(",")})`;
 
@@ -9,8 +10,8 @@ function drawObject(ctx, depths, pose, object, type, focal, horizon) {
   if (forward < 0.006) return;
   const lateral = dx * Math.sin(pose.heading) - dy * Math.cos(pose.heading);
   const center = ctx.canvas.width / 2 + (focal * lateral) / forward;
-  const width = (focal * (type === "goal" ? 0.026 : 0.043)) / forward;
-  const height = (focal * (type === "goal" ? 0.1 : 0.082)) / forward;
+  const width = (focal * (type === "goal" ? 0.125 : 0.069)) / forward;
+  const height = (focal * (type === "goal" ? 0.195 : 0.078)) / forward;
   const bottom = horizon + (0.025 * focal) / forward;
   const left = Math.floor(center - width / 2);
   const right = Math.ceil(center + width / 2);
@@ -21,40 +22,20 @@ function drawObject(ctx, depths, pose, object, type, focal, horizon) {
     if (forward < depths[x] + 0.002) ctx.rect(x, 0, 1, ctx.canvas.height);
   }
   ctx.clip();
-  ctx.translate(center, bottom - height);
-  ctx.scale(width, height);
-  if (type === "goal") {
-    ctx.fillStyle = "#59cd83";
-    ctx.fillRect(-0.08, 0.24, 0.16, 0.66);
+  ctx.drawImage(objectSprite(type), center - width / 2, bottom - height, width, height);
+  // At mouse height the overhead sign moves above the viewport up close.
+  // Keep a small EXIT plaque on the visible doorway when that happens.
+  if (type === "goal" && bottom - height < 0 && center > 0 && center < ctx.canvas.width) {
+    const y = Math.max(18, Math.min(ctx.canvas.height - 18, bottom - 15));
+    ctx.fillStyle = "#144b33";
     ctx.beginPath();
-    ctx.ellipse(0, 0.2, 0.39, 0.19, 0, 0, Math.PI * 2);
+    ctx.roundRect(center - 25, y - 12, 50, 24, 4);
     ctx.fill();
-    ctx.fillStyle = "#bfffcf";
-    ctx.beginPath();
-    ctx.ellipse(-0.12, 0.15, 0.09, 0.05, 0, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.fillStyle = "#306843";
-    ctx.beginPath();
-    ctx.ellipse(0, 0.93, 0.44, 0.06, 0, 0, Math.PI * 2);
-    ctx.fill();
-  } else {
-    ctx.fillStyle = "#303238";
-    ctx.fillRect(-0.33, 0.32, 0.66, 0.55);
-    ctx.fillStyle = "#4b4f54";
-    ctx.fillRect(-0.43, 0.43, 0.86, 0.24);
-    ctx.beginPath();
-    ctx.ellipse(0, 0.24, 0.35, 0.22, 0, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.fillStyle = "#e8b83a";
-    ctx.fillRect(-0.09, 0.35, 0.18, 0.3);
-    ctx.fillStyle = "#ea5347";
-    for (const x of [-0.15, 0.15]) {
-      ctx.beginPath();
-      ctx.ellipse(x, 0.2, 0.065, 0.045, 0, 0, Math.PI * 2);
-      ctx.fill();
-    }
-    ctx.fillStyle = "#212429";
-    ctx.fillRect(-0.4, 0.83, 0.8, 0.14);
+    ctx.fillStyle = "#f2fff2";
+    ctx.font = "bold 13px sans-serif";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText("EXIT", center, y);
   }
   ctx.restore();
 }
@@ -103,7 +84,8 @@ export function renderEye(ctx, game, side) {
     ctx.fillRect(x, top, 1, bottom - top);
   }
   const objects = [
-    { location: game.world.goal, type: "goal" },
+    // Put the wide doorway just inside the tapered arena end.
+    { location: { x: game.world.goal.x - 0.04, y: game.world.goal.y }, type: "goal" },
     { location: game.predator, type: "predator" },
   ].sort((a, b) => Math.hypot(player.x - b.location.x, player.y - b.location.y) - Math.hypot(player.x - a.location.x, player.y - a.location.y));
   for (const object of objects) drawObject(ctx, depths, pose, object.location, object.type, focal, horizon);
@@ -153,10 +135,14 @@ export function renderMap(ctx, game) {
   });
   ctx.stroke();
   const [gx, gy] = point(game.world.goal);
-  ctx.fillStyle = "#3c9963";
-  ctx.beginPath();
-  ctx.arc(gx, gy, 4, 0, Math.PI * 2);
-  ctx.fill();
+  ctx.fillStyle = "#247449";
+  ctx.fillRect(gx - 4, gy - 6, 8, 12);
+  ctx.strokeStyle = "#c9f5d0";
+  ctx.lineWidth = 1;
+  ctx.strokeRect(gx - 2, gy - 4, 4, 8);
+  ctx.font = "bold 10px sans-serif";
+  ctx.textAlign = "right";
+  ctx.fillText("EXIT", gx - 8, gy + 3);
   const [x, y] = point(game.player);
   ctx.save();
   ctx.translate(x, y);

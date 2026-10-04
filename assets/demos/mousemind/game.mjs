@@ -62,7 +62,7 @@ function syncState() {
   overlay.hidden = game.phase === "running";
   if (game.phase === "ready") {
     title.textContent = "A mouse’s-eye view.";
-    description.textContent = "Find the green exit. Peek around obstacles, and keep away from the robot.";
+    description.textContent = "Find the green EXIT doorway. Peek around obstacles, and keep away from the tracked robot.";
     start.textContent = "Play";
     setStatus("Ready. Use the arrow keys or WASD, or the buttons below.");
   } else if (game.phase === "paused") {
@@ -81,7 +81,7 @@ function syncState() {
     start.textContent = "Try again";
     setStatus("Time is up. Start another run or use the map to plan a route.");
   } else {
-    setStatus("Find the green exit. Q / E lets you peek without moving.");
+    setStatus("Find the green EXIT doorway. Q / E lets you peek without moving.");
   }
   start.disabled = false;
   lastPhase = game.phase;
