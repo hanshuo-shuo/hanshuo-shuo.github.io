@@ -842,7 +842,7 @@
 <h3 class="project-title"><a href="https://github.com/hanshuo-shuo/MouseMind" target="_blank" rel="noopener">MouseMind <span aria-hidden="true">↗</span></a></h3>
 <a class="try-demo" href="/assets/demos/mousemind/" target="_blank" rel="noopener" aria-haspopup="dialog" aria-controls="mousemind-playground"><span aria-hidden="true">▷</span> Try demo</a>
 </div>
-<p>A hierarchical language-conditioned policy that uses instructions and temporal context to choose strategic skills, with a compact behavior-cloning specialist for low-level motion.</p>
+<p>A 64M-parameter MiniMind agent for instruction-conditioned control in Cellworld BotEvade. Its skill planner is post-trained with LoRA SFT and verified DPO using exact-state counterfactual rollouts, and selects goal progress, predator evasion, or holding from instructions, semantic state, and temporal history. An MLP behavior-cloning specialist handles goal progress, while geometric controllers handle evasion and holding.</p>
 <figure class="project-demo">
 <div class="demo-toolbar">
 <span>First-person view</span><button class="demo-toggle" type="button" aria-pressed="false">Play animation</button>
