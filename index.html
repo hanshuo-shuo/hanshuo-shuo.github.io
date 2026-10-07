@@ -760,9 +760,9 @@
 <h2 id="working-title">working papers</h2>
 
 <article class="working-paper">
-<h3>Beyond Observed Rescue: Evaluating Repeatable Intervention Value in VLA Policies</h3>
+<h3>Is This State Recoverable? Post-Training Generative Verifiers for Capability-Aware Safety Interventions in VLA Policies</h3>
 <p class="paper-status">Working paper · 2026</p>
-<p>When a recovery branch succeeds, is the intervention worth repeating? This work studies vision-language-action policies through saved-state branching, repeated rollouts, and separate selection and evaluation. It distinguishes deadline-sensitive acceleration, repeatable task rescue, and the limits of transferring intervention benefits to fresh robot states.</p>
+<p>Safety interventions for vision-language-action (VLA) policies often avoid collisions by stopping the task, without knowing whether a safe completion was still possible. This work treats recoverability as a relation between a robot's state, the task, its safety constraints, the available recovery capabilities, and the remaining time, rather than a property of the scene alone. Using saved-state branching and repeated rollouts, we build certified feasibility labels from witness trajectories and geometric certificates, and find that frozen VLA features and simple visual cues do not separate recoverable from unrecoverable states in a calibrated way. We then post-train a generative verifier that reasons about the scene, task, and available capabilities before issuing a feasibility verdict, and test whether its judgment updates correctly when the scene is held fixed but the recovery capability changes, so that intervention can move from a brake toward a steering wheel.</p>
 </article>
 
 <article class="working-paper">
