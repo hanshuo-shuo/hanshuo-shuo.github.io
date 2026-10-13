@@ -796,44 +796,6 @@
 <p>Safety interventions for vision-language-action (VLA) policies often avoid collisions by stopping the task, without knowing whether a safe completion was still possible. This work treats recoverability as a relation between a robot's state, the task, its safety constraints, the available recovery capabilities, and the remaining time, rather than a property of the scene alone. Using saved-state branching and repeated rollouts, we build certified feasibility labels from witness trajectories and geometric certificates, and find that frozen VLA features and simple visual cues do not separate recoverable from unrecoverable states in a calibrated way. We then post-train a generative verifier that reasons about the scene, task, and available capabilities before issuing a feasibility verdict, and test whether its judgment updates correctly when the scene is held fixed but the recovery capability changes, so that intervention can move from a brake toward a steering wheel.</p>
 </article>
 
-<article class="working-paper">
-
-<div class="working-paper-heading">
-<h3>C³-Safe: Compositional semantic safety from vision-language models</h3>
-
-
-
-  <details class="publication-figure">
-    <summary aria-label="Preview Figure 1 · C³-Safe overview" aria-controls="figure-c3_safe">Figure</summary>
-    <figure class="publication-figure-panel" id="figure-c3_safe" aria-label="Figure 1 · C³-Safe overview">
-      <div class="publication-figure-heading">
-        <span>Figure 1 · C³-Safe overview</span>
-        <button class="publication-figure-close" type="button" aria-label="Close figure preview" hidden="">×</button>
-      </div>
-      <a class="publication-figure-image" href="/assets/img/publication_previews/c3-safe-overview.svg" target="_blank" rel="noopener" aria-label="Open full-size Figure 1 · C³-Safe overview">
-        <img src="/assets/img/publication_previews/c3-safe-overview.svg" width="2100" height="990" alt="Three-panel vector diagram showing crossing and bypassing the same water patch with waterproof and non-waterproof capability cards, an offline VLM training pipeline with a no-VLM test path, and a cube of appearance, capability and rule combinations with seven train corners and one held-out test corner." loading="lazy" decoding="async">
-      </a>
-      <figcaption>
-        Semantic safety composes visual terrain demand, motion exposure, and symbolic capability/rule cards. A VLM supplies offline supervision, while the learned policy runs without a VLM at test time and accepts swapped cards for new robot and rule combinations.
-        <span class="publication-figure-credit">C³-Safe working paper · First author · Vector method overview</span>
-      </figcaption>
-      <div class="publication-figure-links">
-        <a href="/assets/img/publication_previews/c3-safe-overview.svg" target="_blank" rel="noopener">Full-size figure <span aria-hidden="true">↗</span></a>
-          <a href="/assets/img/publication_previews/c3-safe-overview.pdf" target="_blank" rel="noopener">Vector PDF
-            <span aria-hidden="true">↗</span></a>
-          <a href="/assets/img/publication_previews/c3-safe-overview.png" target="_blank" rel="noopener">PNG (300 dpi)
-            <span aria-hidden="true">↗</span></a>
-      </div>
-    </figure>
-  </details>
-
-
-</div>
-
-<p class="paper-status">Working paper · 2026 · First author</p>
-<p>Robots must decide whether a visible hazard, such as water, mud, or fragile ground, is dangerous for this robot on this task. Existing methods put a VLM in the control loop to pick actions, which is slow and entangles perception with robot capability and task rules. This work factors semantic safety into three parts: a per-pixel terrain-demand field distilled from a VLM at training time only, a swept-footprint operator that turns the field into the exposure of the robot's actual motion, and symbolic capability/rule cards that price that exposure. A SAC-Lagrangian policy trained on this cost runs with no VLM at test time and generalizes to unseen robot × rule × terrain-appearance combinations by swapping cards instead of retraining perception. The work includes a MuJoCo/Safety-Gymnasium semantic-hazard benchmark, a counterfactual-twin evaluation protocol, and a distillation pipeline using a Qwen3-VL teacher, PyTorch, and SLURM/A100. Exposure supervision reduces motion-risk error by 8×, and a matched property-swap probe exposes location shortcuts invisible to mIoU.</p>
-</article>
-
 </section>
 
 <section id="projects" class="home-section" aria-labelledby="project-title">
